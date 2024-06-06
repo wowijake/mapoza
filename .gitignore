@@ -1,0 +1,5 @@
+//koika zinthu zoti zisakaoneke ku git repository
+//that's wat .gitignore does,
+ 
+venv/
+jobportal/db.sqlite3
