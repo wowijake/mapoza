@@ -1,0 +1,19 @@
+{% extends 'jobs/base.html' %}
+
+
+{% block content %}
+
+{% for job in jobs %}
+    <div class="bg-white p-3 rounded mt-2 mb-3">
+        <h3>{{ job.title|title }}</h3>
+        <small>{{ job.location }}</small>
+        <hr/>
+        <p>{{ job.company_name }} | {{ job.date_created|date:'Y-m-d' }}</p>
+        {% if job.description %}
+            <p>description: {{ job.description }}</p>
+        {% endif %}
+    </div>
+{% endfor %}
+
+{% endblock content %}
+
