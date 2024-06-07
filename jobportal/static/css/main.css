@@ -1,0 +1,58 @@
+.top--navbar{
+    background-color: aliceblue;
+    padding: 12px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #d8d3d3;
+}
+
+
+.navbar--title > a{
+    text-decoration: none;
+    color: #222;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.navbar--link--items{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 20px;
+    margin-top: 13px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.navbar--link--items li a{
+    text-decoration: none;
+    color: #222;
+    cursor: pointer;
+    transition: all;
+}
+
+.navbar--link--items li a:hover{
+    padding-top: 5px;
+    border-bottom: 2px dotted greenyellow;
+    animation: 2s normal;
+}
+
+.section--header{
+    background: url('/static/images/bg.jpg') no-repeat right;
+}
+
+.hero--header{
+    font-weight: 700;
+}
+
+.get--started--section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section h3{
+    font-weight: 900;
+}

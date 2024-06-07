@@ -3,17 +3,47 @@
 
 {% block content %}
 
-{% for job in jobs %}
-    <div class="bg-white p-3 rounded mt-2 mb-3">
-        <h3>{{ job.title|title }}</h3>
-        <small>{{ job.location }}</small>
-        <hr/>
-        <p>{{ job.company_name }} | {{ job.date_created|date:'Y-m-d' }}</p>
-        {% if job.description %}
-            <p>description: {{ job.description }}</p>
-        {% endif %}
+<section class="container-fluid p-5 border-2 bg-light section--header">
+    <div class="hero--header">
+        <h1>Find your dream job</h1>
     </div>
-{% endfor %}
+
+    <div class="text-muted hero--content">
+        <p>Looking for jobs? Browse our latest job openings to view & apply to the best jobs today!</p>
+    </div>
+</section>
+
+<section class="container mt-5">
+    <div class="row">
+        <div class="col-md-8">
+            <img src="static/images/job1.jpg" width="100%" class="rounded" />
+        </div>
+        <div class="col-md-4 mt-5">
+            <h3>Find your profession</h3>
+            <p>
+                Unleash your potential! Explore our expansive job board and find your dream career. Search by industry, keyword, or location to discover a world of opportunities. From seasoned professionals to new graduates, we connect you with the perfect fit. Refine your search with advanced filters and land a job you love. Don't wait, browse now and start your journey to career fulfillment!
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="container mt-5 bg-light p-3">
+    <div class="row">
+        <div class="col-md-4 mt-5">
+            <h3>Unlock true potential</h3>
+            <p>
+                Ever feel there's more you can achieve? You're not alone.  Unlocking your true potential is a thrilling adventure, and we're here to guide you. Our resources provide insightful articles, skill-building courses, and inspirational stories to help you conquer challenges, cultivate strengths, and reach new heights. Whether you want to launch a business, master a new language, or simply become the best version of yourself, we'll equip you with the tools and support you need to break barriers and unleash your inner potential.  Let's embark on this journey together!
+            </p>
+        </div>
+        <div class="col-md-8">
+            <img src="static/images/job2.jpg" width="100%" class="rounded" />
+        </div>
+    </div>
+</section>
+
+<section class="bg-info p-3 mt-5 get--started--section">
+    <a href="#" class="btn btn-warning btn--get--started">Get Started</a>
+</section>
 
 {% endblock content %}
 
