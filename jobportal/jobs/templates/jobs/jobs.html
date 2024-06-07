@@ -1,0 +1,64 @@
+{% extends 'jobs/base.html' %}
+
+
+{% block content %}
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="bg-danger p-4 rounded">
+                Jobs
+            </div>
+        </div>
+        <div class="col-md-8 mb-3">
+            {% if jobs %}
+                {% for job in jobs %}
+                    <div class="bg-light rounded p-3 shadow-lg mb-3">
+                        <div class="job--wrapper">
+                            <div class="job--container--details">
+                                <div class="job--top--part">
+                                    <div class="company--logo">
+                                        <i class="fa fa-2x fa-building"></i>
+                                    </div>
+                                    <div class="job--info">
+                                        <div class="job--title">
+                                            <h4>{{ job.title }}</h4>
+                                        </div>
+                                        <div class="company--job--descr">
+                                            <small>{{ job.company_name }}</small>
+                                            <div class="job--type mb-3">
+                                                <ul class="job--types">
+                                                    {% for job_type in job.job_type.all %}
+                                                        <li>
+                                                            {{ job_type }}
+                                                        </li>
+                                                    {% endfor %}
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="job--bottom--part">
+                                    {% if job.description %}
+                                        <p class="text-muted">{{ job.description }}</p>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <div class="job--container--location">
+                                <div class="job--location">
+                                    <i class="fa fa-2x fa-map-marker"></i>
+                                    <p>{{ job.location }}</p>
+                                </div>
+                                <div class="job--time">
+                                    <small class="text-muted">Posted on {{ job.date_created|date:'Y/m/d' }}</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
