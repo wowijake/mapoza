@@ -6,7 +6,7 @@
 <div class="container mt-4">
     <div class="row">
         <div class="col-md-4">
-            <div class="bg-danger p-4 rounded">
+            <div class="bg-success p-4 rounded">
                 Jobs
             </div>
         </div>
@@ -18,16 +18,16 @@
                             <div class="job--container--details">
                                 <div class="job--top--part">
                                     <div class="company--logo">
-                                        <i class="fa fa-2x fa-building"></i>
+                                        <i class="fa fa-2x fa-building mb-0"></i>
                                     </div>
-                                    <div class="job--info">
-                                        <div class="job--title">
+                                    <div class="job--info ">
+                                        <div class="job--title mb-3">
                                             <h4>{{ job.title }}</h4>
                                         </div>
-                                        <div class="company--job--descr">
+                                        <div class="company--job--descr mb-5">
                                             <small>{{ job.company_name }}</small>
-                                            <div class="job--type mb-3">
-                                                <ul class="job--types">
+                                            <div class="job--type ">
+                                                <ul class="job--types mb-0">
                                                     {% for job_type in job.job_type.all %}
                                                         <li>
                                                             {{ job_type }}

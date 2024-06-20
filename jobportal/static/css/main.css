@@ -1,16 +1,17 @@
+
 .top--navbar{
-    background-color: aliceblue;
+    background-color: #1a94ff;
     padding: 12px 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #d8d3d3;
+    border-bottom: 1px solid #90caf9;
 }
 
 
 .navbar--title > a{
     text-decoration: none;
-    color: #222;
+    color: #ffffff;
     cursor: pointer;
     font-weight: bold;
     font-size: 25px;
@@ -28,19 +29,26 @@
 
 .navbar--link--items li a{
     text-decoration: none;
-    color: #222;
+    color: #ffffff;
     cursor: pointer;
     transition: all;
 }
 
 .navbar--link--items li a:hover{
     padding-top: 5px;
-    border-bottom: 2px dotted greenyellow;
+    border-bottom: 2px dotted rgb(255, 255, 255);
     animation: 2s normal;
+    text-transform: uppercase;
 }
-
+.navbar--search{
+    flex-grow: 0.3;
+    justify-content:right;
+    margin-left: 20px;
+    border-radius: 31%;
+}
 .section--header{
     background: url('/static/images/bg.jpg') no-repeat right;
+    font-family: Verdana, sans-serif;
 }
 
 .hero--header{
