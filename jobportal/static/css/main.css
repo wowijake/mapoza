@@ -1,6 +1,7 @@
 
 .top--navbar{
     background-color: #1a94ff;
+    font-family: 'Segoe UI',Verdana, sans-serif;
     padding: 12px 15px;
     display: flex;
     justify-content: space-between;
