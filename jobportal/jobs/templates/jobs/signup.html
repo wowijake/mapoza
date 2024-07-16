@@ -1,0 +1,13 @@
+{% extends 'jobs/base.html' %}
+
+
+{% block content %}
+<form method="POST">
+{% csrf_token % }
+{{form}}
+
+have an account already, sign in here
+
+</form>
+
+{% end block content %}
