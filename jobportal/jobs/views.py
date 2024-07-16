@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Job
+from django.contrib.auth.forms import UserCreationForm
 
 
 def home_page(request):
@@ -16,3 +17,9 @@ def about_page(request):
     context = { 'title': 'About Us' }
     return render(request, 'jobs/about.html', context)
 
+
+def signup_page(request):
+    form = UserCreationForm
+    return render(request, 
+                    'jobs/signup.html',
+  context={"form":form})
