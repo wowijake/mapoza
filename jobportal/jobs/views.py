@@ -11,7 +11,7 @@ def home_page(request):
 
 def jobs_page(request):
     jobs = Job.objects.all().order_by('-date_created')
-    context = { 'jobs': jobs }
+    context = { 'jobs': jobs, 'colors': ['info', 'warning', 'danger',] }
 
     return render(request, 'jobs/jobs.html', context)
 
@@ -29,7 +29,7 @@ def signup_page(request):
             form.save()
             username = form.cleaned_data.get('username')
             messages.success(request, f'Account created for {username}!')
-            return redirect('login.html')  # Redirect to login page after successful signup
+            return redirect('login-page')  # Redirect to login page after successful signup
     else:
         form = UserCreationForm()
     return render(request, 'jobs/signup.html', {'form': form})
@@ -45,7 +45,7 @@ def login_page(request):
             if user is not None:
                 login(request, user)
                 messages.success(request, f'Welcome, {username}!')
-                return redirect('')  # Redirect to home page after successful login
+                return redirect('jobs-page')  # Redirect to home page after successful login
             else:
                 messages.error(request, 'Invalid username or password.')
         else:
