@@ -6,12 +6,33 @@
 <div class="container mt-4">
     <div class="row">
         <div class="col-md-4">
-            <div class="bg-success p-4 rounded">
-                Jobs
+            <div class="p-4 rounded">
+                <div class="bg-dark rounded p-4 w-100 h-25 mb-3">
+                    <h3 class="text-white fw-bold">Welcome!</h3>
+                    <p class="text-white">Discover new opportunities with Mapoza.</p>
+                </div>
+                {% if jobs %}
+                    <div class="bg-light p-3">
+                        <h5 class="text-dark">Filters</h5>
+                        <small class="text-muted fs-6">Working Schedule</small>
+                        <div class="mt-1">
+                            {% for job_type in job_types %}
+                                <input type="checkbox" class="" />
+                                {{ job_type.type_name }}<br/>
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% else %}
+                    <small class="text-danger fw-bolder">No jobs found!</small>
+                {% endif %}
             </div>
         </div>
         <div class="col-md-8 mb-3">
             {% if jobs %}
+                <div class="d-flex gap-4 mb-4">
+                    <h2 class="text-dark fw-bold mb-4">Recommended Jobs</h2>
+                    <p class="border border-dark fw-bolder fs-5 w-25 p-2 text-center rounded-pill">{{ jobs.count }}</p>
+                </div>
                 <div class="row">
                     {% for job in jobs %}
                         <div class="col-md-4 mb-3">

@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Job
+from .models import Job, JobType
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import authenticate, login 
 from django.contrib import messages
@@ -11,7 +11,8 @@ def home_page(request):
 
 def jobs_page(request):
     jobs = Job.objects.all().order_by('-date_created')
-    context = { 'jobs': jobs, 'colors': ['info', 'warning', 'danger',] }
+    job_types = JobType.objects.all().order_by('type_name')
+    context = { 'jobs': jobs, 'job_types': job_types,  'colors': ['info', 'warning', 'danger',] }
 
     return render(request, 'jobs/jobs.html', context)
 
