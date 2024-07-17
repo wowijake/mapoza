@@ -16,10 +16,14 @@
                         <h5 class="text-dark">Filters</h5>
                         <small class="text-muted fs-6">Working Schedule</small>
                         <div class="mt-1">
-                            {% for job_type in job_types %}
-                                <input type="checkbox" class="" />
-                                {{ job_type.type_name }}<br/>
-                            {% endfor %}
+                            <form method="GET" id="filter_jobs">
+                                <input type="radio" name="filter" value="All" id="all" class="" />
+                                All <br />
+                                {% for job_type in job_types %}
+                                    <input type="radio" name="filter" value="{{ job_type.type_name }}" id="{{ job_type.type_name }}" class="" />
+                                    {{ job_type.type_name }}<br/>
+                                {% endfor %}
+                        </form>
                         </div>
                     </div>
                 {% else %}

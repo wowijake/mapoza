@@ -10,9 +10,17 @@ def home_page(request):
 
 
 def jobs_page(request):
-    jobs = Job.objects.all().order_by('-date_created')
     job_types = JobType.objects.all().order_by('type_name')
-    context = { 'jobs': jobs, 'job_types': job_types,  'colors': ['info', 'warning', 'danger',] }
+    if 'filter' in request.GET:
+        filter = request.GET.get('filter')
+        print(f'{filter}')
+        jobs = Job.objects.filter(job_type__type_name=filter).order_by('-date_created')
+        print(jobs)
+        context = { 'jobs': jobs, 'job_types': job_types,  'colors': ['info', 'warning', 'danger',] }
+    else:
+        jobs = Job.objects.all().order_by('-date_created')
+        print(jobs)
+        context = { 'jobs': jobs, 'job_types': job_types,  'colors': ['info', 'warning', 'danger',] }
 
     return render(request, 'jobs/jobs.html', context)
 
