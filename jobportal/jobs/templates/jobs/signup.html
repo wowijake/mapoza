@@ -1,13 +1,21 @@
 {% extends 'jobs/base.html' %}
 
-
 {% block content %}
 <form method="POST">
-{% csrf_token % }
-{{form}}
-
-have an account already, sign in here
-
+    {% csrf_token %}
+    {{ form.as_p }}  {# Use form.as_p to render form fields as paragraphs #}
+    
+    <p>Already have an account? <a href="#">Sign in here</a>.</p>
+    
+    <button type="submit">Register</button>
 </form>
 
-{% end block content %}
+{% if messages %}
+<ul>
+    {% for message in messages %}
+        <li>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+{% endblock content %}
