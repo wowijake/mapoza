@@ -28,7 +28,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'jobs.apps.JobsConfig',
+    'crispy_forms',
+  
 ]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4',
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -43,6 +48,7 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'jobportal.urls'
 
 TEMPLATES = [
+
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [],
@@ -56,6 +62,7 @@ TEMPLATES = [
             ],
         },
     },
+  
 ]
 
 WSGI_APPLICATION = 'jobportal.wsgi.application'

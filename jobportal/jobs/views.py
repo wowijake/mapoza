@@ -3,6 +3,8 @@ from .models import Job, JobType
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import authenticate, login 
 from django.contrib import messages
+from crispy_forms.helper import FormHelper
+from crispy_forms.layout import Layout, Fieldset, ButtonHolder, Submit
 
 
 def home_page(request):
@@ -41,6 +43,17 @@ def signup_page(request):
             return redirect('login-page')  # Redirect to login page after successful signup
     else:
         form = UserCreationForm()
+        form.helper = FormHelper()
+        form.helper.form_method = 'post'
+        form.helper.layout = Layout(
+            'username',
+            'password1',
+            'password2',
+            ButtonHolder(
+                Submit('submit', 'Sign UP', css_class='btn btn-primary')
+            )
+
+        )
     return render(request, 'jobs/signup.html', {'form': form})
 
 
@@ -61,4 +74,14 @@ def login_page(request):
             messages.error(request, 'Invalid username or password.')
     else:
         form = AuthenticationForm()
+        form.helper = FormHelper()
+        form.helper.form_method = 'POST'
+        form.helper.layout = Layout(
+            'username',
+            'password',
+            ButtonHolder(
+                Submit('submit', 'Login', css_class='btn btn-primary')
+            )
+
+        )
     return render(request, 'jobs/login.html', {'form': form})

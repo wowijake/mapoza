@@ -5,9 +5,9 @@
     {% csrf_token %}
     {{ form.as_p }}  {# Use form.as_p to render form fields as paragraphs #}
     
-    <p>Already have an account? <a href="#">Sign in here</a>.</p>
+    <p>Already have an account? <a href="{% url 'login-page' %}">SIGN IN HERE</a>.</p>
     
-    <button type="submit">Register</button>
+    <button type="submit">Create Account</button>
 </form>
 
 {% if messages %}

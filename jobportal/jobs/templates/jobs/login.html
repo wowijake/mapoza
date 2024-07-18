@@ -1,12 +1,14 @@
 {% extends 'jobs/base.html' %}
+{% load crispy_forms_tags %}
 
 {% block content %}
+<div class="container">
+    <h2>Login</h2>
 
-<h2>Login</h2>
     <form method="POST">
         {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Login</button>
+        {{ form|crispy }}
+        <button type="submit" class="btn btn-primary">Login</button>
     </form>
     {% if messages %}
         <ul>
@@ -15,6 +17,5 @@
             {% endfor %}
         </ul>
     {% endif %}
-
-
-{% endblock content %}
+</div>
+{% endblock %}
