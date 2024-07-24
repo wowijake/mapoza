@@ -2,7 +2,7 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-    <div class="d-flex items-center justify-content-center mt-4">
+    <div class="d-flex items-center justify-content-center mt-4 mb-4">
         <form method="POST" class="bg-white shadow p-4 rounded">
             {% csrf_token %}
             {{ form|crispy }}
@@ -11,13 +11,5 @@
             <button type="submit" class="btn w-100 btn-success text-white p-2 text-center">Register</button>
         </form>
     </div>
-
-    {% if messages %}
-    <ul>
-        {% for message in messages %}
-            <li>{{ message }}</li>
-        {% endfor %}
-    </ul>
-    {% endif %}
 
 {% endblock content %}
