@@ -1,13 +1,14 @@
 {% extends 'jobs/base.html' %}
+{% load crispy_forms_tags %}
 
 {% block content %}
     <div class="d-flex items-center justify-content-center mt-4">
-        <form method="POST">
+        <form method="POST" class="bg-white shadow p-4 rounded">
             {% csrf_token %}
-            {{ form.as_p }}
+            {{ form|crispy }}
             
-            <p>Already have an account? <a href="#">Sign in here</a>.</p>
-            <button type="submit">Register</button>
+            <p>Already have an account? <a href="{% url 'login-page' %}">Sign in here</a>.</p>
+            <button type="submit" class="btn w-100 btn-success text-white p-2 text-center">Register</button>
         </form>
     </div>
 
