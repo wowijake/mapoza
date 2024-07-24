@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Job, JobType
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
-from django.contrib.auth import authenticate, login 
+from django.contrib.auth import authenticate, login, logout 
 from django.contrib import messages
 from django.db.models import Q
 
@@ -27,6 +27,11 @@ def jobs_page(request):
         context = { 'jobs': jobs, 'job_types': job_types,  'colors': ['info', 'warning', 'danger', 'primary'] }
 
     return render(request, 'jobs/jobs.html', context)
+
+def job_detail_page(request, pk):
+    job = Job.objects.get(pk=pk)
+    context = { 'job': job, 'colors': ['info', 'warning', 'danger', 'primary'], }
+    return render(request, 'jobs/job_detail.html', context)
 
 def about_page(request):
     context = { 'title': 'About Us' }
@@ -66,3 +71,8 @@ def login_page(request):
     else:
         form = AuthenticationForm()
     return render(request, 'jobs/login.html', {'form': form})
+
+
+def logout_page(request):
+    logout(request)
+    return redirect('login-page')

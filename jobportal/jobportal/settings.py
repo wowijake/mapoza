@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'jobs.apps.JobsConfig',
     'crispy_forms',
     'crispy_bootstrap4',
+    'ckeditor',
 ]
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"

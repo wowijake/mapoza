@@ -39,10 +39,9 @@
                                 <div class="p-2">
                                     <div class="d-flex items-center justify-content-between">
                                         <div>
-                                            <p class="text-dark lead mb-0">{{ job.description }}</p>
                                             <small class="text-muted">{{ job.location }}</small>
                                         </div>
-                                       <a class="btn btn-outline-dark rounded-pill text-info fs-6 fw-bold text-center" href="#" style="height: 40px;">
+                                       <a class="btn btn-outline-dark rounded-pill text-info fs-6 fw-bold text-center" href="{% url 'job-detail-page' job.pk %}" style="height: 40px;">
                                             Apply
                                         </a>
                                     </div>

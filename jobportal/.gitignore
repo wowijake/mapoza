@@ -2,3 +2,4 @@ venv/
 db.sqlite3
 jobs/**/*.pyc
 jobportal/**/*.pyc
+jobs/migrations/

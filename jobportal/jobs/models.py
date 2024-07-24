@@ -1,4 +1,5 @@
 from django.db import models
+from ckeditor.fields import RichTextField
 
 
 class JobType(models.Model):
@@ -13,7 +14,7 @@ class Job(models.Model):
     company_name = models.CharField(max_length=150, null=False)
     location = models.CharField(max_length=255, null=False)
     job_type = models.ManyToManyField(JobType)
-    description = models.TextField(null=True, blank=True)
+    description = RichTextField(null=False, blank=True, help_text='Job description and requirements')
     date_created = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)
 

@@ -21,13 +21,19 @@
                 <a href="#">Contact Us</a>
             </li>
 
-            <li>
-                <a href="{% url 'signup-page' %}">SignUp</a>
-            </li>
+            {% if user.is_authenticated %}
+                <li>
+                    <a href="{% url 'logout-page' %}">Logout</a>
+                </li>
+            {% else %}
+                <li>
+                    <a href="{% url 'signup-page' %}">SignUp</a>
+                </li>
 
-            <li>
-                <a href="{% url 'login-page' %}">Login</a>
-            </li>
+                <li>
+                    <a href="{% url 'login-page' %}">Login</a>
+                </li>
+            {% endif %}
         </ul>
     </div>
 
