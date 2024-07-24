@@ -1,7 +1,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
+    // filter jobs
     const filterJobForm = document.forms['filter_jobs']
-
     let filter = window.location.href
 
     if(!filter.includes('=')){
@@ -19,10 +19,31 @@ document.addEventListener('DOMContentLoaded', () => {
                 const url = new URL('http://127.0.0.1:8000/jobs/')
                 url.searchParams.append('filter', event.target.value)
                 window.location.href = url.href
-                console.log(url)
             }
         }
     })
+
+    // saerch jobs
+    const searchJobsForm = document.forms['search-jobs-form']
+    
+    searchJobsForm.addEventListener('submit', (event) => {
+        event.preventDefault()
+        console.log('function run')
+        const searchQuery = searchJobsForm['query-jobs'].value
+        console.log(searchQuery)
+        const url = new URL('http://127.0.0.1:8000/jobs/')
+        url.searchParams.append('query', searchQuery)
+        //sendGetRequest(url)
+        window.location.href = url.href
+    })
+
+    function sendGetRequest(url){
+        fetch(url)
+        .then(response => response.text())
+        .then(html => document.body.innerHTML = html)
+        .catch(error => console.error('Error:', error))
+    }
+        
 })
 
 

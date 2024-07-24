@@ -6,30 +6,7 @@
 <div class="container mt-4">
     <div class="row">
         <div class="col-md-4">
-            <div class="p-4 rounded">
-                <div class="bg-dark rounded p-4 w-100 h-25 mb-3">
-                    <h3 class="text-white fw-bold">Welcome!</h3>
-                    <p class="text-white">Discover new opportunities with Mapoza.</p>
-                </div>
-                {% if jobs %}
-                    <div class="bg-light p-3">
-                        <h5 class="text-dark">Filters</h5>
-                        <small class="text-muted fs-6">Working Schedule</small>
-                        <div class="mt-1">
-                            <form method="GET" id="filter_jobs">
-                                <input type="radio" name="filter" value="All" id="all" class="" />
-                                All <br />
-                                {% for job_type in job_types %}
-                                    <input type="radio" name="filter" value="{{ job_type.type_name }}" id="{{ job_type.type_name }}" class="" />
-                                    {{ job_type.type_name }}<br/>
-                                {% endfor %}
-                        </form>
-                        </div>
-                    </div>
-                {% else %}
-                    <small class="text-danger fw-bolder">No jobs found!</small>
-                {% endif %}
-            </div>
+            {% include 'jobs/job_filter.html' %}
         </div>
         <div class="col-md-8 mb-3">
             {% if jobs %}

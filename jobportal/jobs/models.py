@@ -19,7 +19,7 @@ class Job(models.Model):
 
 
     class Meta:
-        ordering = ['date_created']
+        ordering = ['-date_created']
 
     def __str__(self):
         return f'{self.title} - {self.company_name}'

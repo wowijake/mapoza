@@ -4,7 +4,7 @@ from .views import (
     about_page, 
     jobs_page,
     signup_page,
-    login_page
+    login_page,
 )
 
 

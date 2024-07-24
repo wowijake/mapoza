@@ -3,6 +3,7 @@ from .models import Job, JobType
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import authenticate, login 
 from django.contrib import messages
+from django.db.models import Q
 
 
 def home_page(request):
@@ -11,16 +12,19 @@ def home_page(request):
 
 def jobs_page(request):
     job_types = JobType.objects.all().order_by('type_name')
+    # filtering jobs on job schedule
     if 'filter' in request.GET:
         filter = request.GET.get('filter')
-        print(f'{filter}')
         jobs = Job.objects.filter(job_type__type_name=filter).order_by('-date_created')
-        print(jobs)
         context = { 'jobs': jobs, 'job_types': job_types,  'colors': ['info', 'warning', 'danger',] }
+    # search for jobs on keywords
+    elif 'query' in request.GET:
+        query = request.GET.get('query')
+        jobs = Job.objects.filter(Q(title__icontains=query) | Q(company_name__icontains=query) | Q(location__icontains=query) | Q(description__icontains=query) | Q(job_type__type_name__icontains=query))
+        context = { 'jobs': jobs, 'job_types': job_types,  'colors': ['info', 'warning', 'danger', 'success'] }
     else:
         jobs = Job.objects.all().order_by('-date_created')
-        print(jobs)
-        context = { 'jobs': jobs, 'job_types': job_types,  'colors': ['info', 'warning', 'danger',] }
+        context = { 'jobs': jobs, 'job_types': job_types,  'colors': ['info', 'warning', 'danger', 'primary'] }
 
     return render(request, 'jobs/jobs.html', context)
 
