@@ -3,60 +3,321 @@
 
 {% block content %}
 
-<section class="container-fluid p-5 border-2 bg-light section--header">
-    <div class="hero--header">
-        <h1>Find your dream job</h1>
-    </div>
-
-    <div class="text-muted hero--content">
-        <p>Looking for jobs? Browse our latest job openings to view & apply to the best jobs today!</p>
+<br><br><br><br>
+<!-- Hero Section -->
+<section class="container-fluid p-5 border-bottom bg-light section--header">
+    <div class="text-center mb-4">
+        <h1 class="display-4 font-weight-bold">Find Your Dream Job</h1>
+        <p class="lead text-muted">Looking for jobs? Browse our latest job openings to view & apply to the best jobs today!</p>
     </div>
 </section>
 
+<!-- Job Information Section -->
 <section class="container mt-5">
     <div class="row">
-        <div class="col-md-8">
-            <img src="static/images/job1.jpg" width="100%" class="rounded" />
+        <div class="col-md-8 mb-4 mb-md-0">
+            <img src="static/images/job1.jpg" class="img-fluid rounded shadow-sm" alt="Job Listing Image">
         </div>
-        <div class="col-md-4 mt-5">
-            <div class="section--header--info">
-                <i class="fa fa-2x fa-tasks mr-3" aria-hidden="true"></i>
-                <h3>Find your profession</h3>
+        <div class="col-md-4">
+            <div class="mb-4">
+                <div class="d-flex align-items-center mb-2">
+                    <i class="fa fa-2x fa-tasks text-primary mr-3" aria-hidden="true"></i>
+                    <h3 class="h5 font-weight-bold">Find Your Profession</h3>
+                </div>
+                <p>
+                    Unleash your potential! Explore our expansive job board and find your dream career. Search by industry, keyword, or location to discover a world of opportunities. From seasoned professionals to new graduates, we connect you with the perfect fit. Refine your search with advanced filters and land a job you love. Don't wait, browse now and start your journey to career fulfillment!
+                </p>
             </div>
-            <p>
-                Unleash your potential! Explore our expansive job board and find your dream career. Search by industry, keyword, or location to discover a world of opportunities. From seasoned professionals to new graduates, we connect you with the perfect fit. Refine your search with advanced filters and land a job you love. Don't wait, browse now and start your journey to career fulfillment!
-            </p>
-            <div class="section--header--info">
-                <i class="fa fa-2x fa-flag" aria-hidden="true"></i>
-                <h3>Set your goals</h3>
+            <div>
+                <div class="d-flex align-items-center mb-2">
+                    <i class="fa fa-2x fa-flag text-success mr-3" aria-hidden="true"></i>
+                    <h3 class="h5 font-weight-bold">Set Your Goals</h3>
+                </div>
+                <p>
+                    Break down intimidating objectives into manageable steps, discover motivational techniques, and unlock the power of goal setting to transform your aspirations into reality. Start building your dream future, visit our goal-setting resources today!
+                </p>
             </div>
-            <p>
-                Break down intimidating objectives into manageable steps, discover motivational techniques, and unlock the power of goal setting to transform your aspirations into reality. Start building your dream future, visit our goal-setting resources today!
-            </p>
         </div>
     </div>
 </section>
 
-<section class="container mt-5 bg-light p-3">
+<!-- Unlock Potential Section -->
+<section class="container mt-5 bg-light p-4 rounded shadow-sm">
     <div class="row">
-        <div class="col-md-4 mt-5">
-            <div class="section--header--info">
-                <i class="fa fa-2x fa-unlock-alt" aria-hidden="true"></i>
-                <h3>Unlock true potential</h3>
+        <div class="col-md-4 mb-4 mb-md-0">
+            <div class="mb-4">
+                <div class="d-flex align-items-center mb-2">
+                    <i class="fa fa-2x fa-unlock-alt text-danger mr-3" aria-hidden="true"></i>
+                    <h3 class="h5 font-weight-bold">Unlock True Potential</h3>
+                </div>
+                <p>
+                    Ever feel there's more you can achieve? You're not alone. Unlocking your true potential is a thrilling adventure, and we're here to guide you. Our resources provide insightful articles, skill-building courses, and inspirational stories to help you conquer challenges, cultivate strengths, and reach new heights. Whether you want to launch a business, master a new language, or simply become the best version of yourself, we'll equip you with the tools and support you need to break barriers and unleash your inner potential. Let's embark on this journey together!
+                </p>
             </div>
-            <p>
-                Ever feel there's more you can achieve? You're not alone.  Unlocking your true potential is a thrilling adventure, and we're here to guide you. Our resources provide insightful articles, skill-building courses, and inspirational stories to help you conquer challenges, cultivate strengths, and reach new heights. Whether you want to launch a business, master a new language, or simply become the best version of yourself, we'll equip you with the tools and support you need to break barriers and unleash your inner potential.  Let's embark on this journey together!
-            </p>
         </div>
         <div class="col-md-8">
-            <img src="static/images/job2.jpg" width="100%" class="rounded" />
+            <img src="static/images/job2.jpg" class="img-fluid rounded shadow-sm" alt="Unlock Potential Image">
         </div>
     </div>
 </section>
 
-<section class="bg-info p-3 mt-5 get--started--section">
-    <a href="#" class="btn btn-warning btn--get--started">Get Started</a>
+<br><br><br><br>
+
+
+<br><br><br><br>
+<!-- FAQ Section -->
+<section class="container mt-5 p-5">
+    <h2 class="text-center mb-4">Frequently Asked Questions</h2>
+    <div class="accordion" id="faqAccordion">
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        What is the best way to apply for jobs?
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#faqAccordion">
+                <div class="card-body">
+                    You can apply for jobs directly through our platform by submitting your resume and cover letter online.
+                </div>
+            </div>
+        </div>
+    
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        are users directly connected to employers?
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#faqAccordion">
+                <div class="card-body">
+                    You can apply for jobs directly through our platform by submitting your resume and cover letter online.
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        how do i create an account?
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#faqAccordion">
+                <div class="card-body">
+                    You can apply for jobs directly through our platform by submitting your resume and cover letter online.
+                </div>
+            </div>
+        </div>
+        <!-- Add more FAQ items as needed -->
+    </div>
 </section>
+
+<br><br><br><br>
+<!-- Blog Section -->
+<section class="container mt-5">
+    <h2 class="text-center mb-4">Latest Blog Posts</h2>
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="card border-0 shadow-sm">
+                <img src="static/images/blog1.jpg" class="card-img-top" alt="Blog Post">
+                <div class="card-body">
+                    <h5 class="card-title">How to Ace Your Next Job Interview</h5>
+                    <p class="card-text">Discover essential tips and strategies to make a great impression in your next job interview.</p>
+                    <a href="#" class="btn btn-primary">Read More</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card border-0 shadow-sm">
+                <img src="static/images/blog2.jpg" class="card-img-top" alt="Blog Post">
+                <div class="card-body">
+                    <h5 class="card-title">Top Skills Employers Are Looking For in 2024</h5>
+                    <p class="card-text">Learn about the most sought-after skills in the job market and how to develop them.</p>
+                    <a href="#" class="btn btn-primary">Read More</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card border-0 shadow-sm">
+                <img src="static/images/blog3.jpg" class="card-img-top" alt="Blog Post">
+                <div class="card-body">
+                    <h5 class="card-title">How to Build a Strong Professional Network</h5>
+                    <p class="card-text">Explore effective strategies for networking and building valuable professional relationships.</p>
+                    <a href="#" class="btn btn-primary">Read More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+  <!-- client section -->
+<br><br><br><br>
+  <section class="client_section layout_padding">
+    <div class="container">
+      <div class="heading_container heading_center psudo_white_primary mb_45">
+        <h2>
+          What says our <span>Customers</span>
+        </h2>
+      </div>
+      <br><br><br>
+      <div class="carousel-wrap ">
+        <div class="owl-carousel client_owl-carousel">
+          <div class="item">
+            <div class="box">
+              <div class="img-box">
+                <img src="images/client1.jpg" alt="" class="box-img">
+              </div>
+              <div class="detail-box">
+                <div class="client_id">
+                  <div class="client_info">
+                    <h6>
+                      LusDen
+                    </h6>
+                    <p>
+                      magna aliqua. Ut
+                    </p>
+                  </div>
+                  <i class="fa fa-quote-left" aria-hidden="true"></i>
+                </div>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis </p>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="box">
+              <div class="img-box">
+                <img src="images/client2.jpg" alt="" class="box-img">
+              </div>
+              <div class="detail-box">
+                <div class="client_id">
+                  <div class="client_info">
+                    <h6>
+                      Zen Court
+                    </h6>
+                    <p>
+                      magna aliqua. Ut
+                    </p>
+                  </div>
+                  <i class="fa fa-quote-left" aria-hidden="true"></i>
+                </div>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis </p>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="box">
+              <div class="img-box">
+                <img src="images/client1.jpg" alt="" class="box-img">
+              </div>
+              <div class="detail-box">
+                <div class="client_id">
+                  <div class="client_info">
+                    <h6>
+                      LusDen
+                    </h6>
+                    <p>
+                      magna aliqua. Ut
+                    </p>
+                  </div>
+                  <i class="fa fa-quote-left" aria-hidden="true"></i>
+                </div>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis </p>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="box">
+              <div class="img-box">
+                <img src="images/client2.jpg" alt="" class="box-img">
+              </div>
+              <div class="detail-box">
+                <div class="client_id">
+                  <div class="client_info">
+                    <h6>
+                      Zen Court
+                    </h6>
+                    <p>
+                      magna aliqua. Ut
+                    </p>
+                  </div>
+                  <i class="fa fa-quote-left" aria-hidden="true"></i>
+                </div>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end client section -->
+
+<!-- Get Started Section -->
+<section class="bg-light p-5 text-center mt-5 rounded">
+    <a href="#" class="btn btn-warning btn-lg">Get Started</a>
+</section>
+
+
+<!-- Footer Section -->
+
+<footer class="container-fluid bg-dark text-white-50 py-5 px-sm-3 px-lg-5" style="margin-top: 90px;">
+    <div class="row pt-5">
+        <div class="container">
+            <div class="row">
+                <!-- Contact Information -->
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <h5 class="text-uppercase font-weight-bold">Contact Us</h5>
+                    <p><i class="fa fa-envelope"></i> <a href="mailto:info@mapoza.com" class="text-white">info@mapoza.com</a></p>
+                    <p><i class="fa fa-phone"></i> +265 456 7890</p>
+                    <p><i class="fa fa-map-marker"></i> 1234 Lilongwe, Area 27, Malawi</p>
+                </div>
+                <!-- Social Media Links -->
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <h5 class="text-uppercase font-weight-bold">Follow Us</h5>
+                    <a href="#" class="text-white mr-3">@mapozajobs<i class="fa fa-facebook-f"></i></a>
+                    <a href="#" class="text-white mr-3">@mapozajobs<i class="fa fa-twitter"></i></a>
+                    <a href="#" class="text-white mr-3">@mapozajobs<i class="fa fa-linkedin-in"></i></a>
+                    <a href="#" class="text-white">@mapozajobs<i class="fa fa-instagram"></i></a>
+                </div>
+                <!-- Additional Details -->
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <h5 class="text-uppercase font-weight-bold">About Us</h5>
+                    <p>We are committed to connecting you with the best job opportunities. Our mission is to provide an easy-to-use platform that helps you find and apply for jobs that match your skills and interests.</p>
+                </div>
+            </div>
+    </div>
+   
+    </div>
+</footer>
+ 
+<div class="container-fluid bg-dark text-white border-top py-4 px-sm-3 px-md-5" style="border-color: rgba(256, 256, 256, .1) !important;">
+    <div class="row">
+        <div class="col-lg-6 text-center text-md-left mb-3 mb-md-0">
+            <p class="m-0 text-white-50">Copyright &copy; 2024 Mapoza Jobs</a>. All Rights Reserved.</a>
+            </p>
+        </div>
+        <div class="col-lg-6 text-center text-md-right">
+            <p class="m-0 text-white-50">Designed by <a href="hbje">HB & JE</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+
+
+
 
 {% endblock content %}
 

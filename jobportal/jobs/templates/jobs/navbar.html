@@ -18,7 +18,7 @@
             </li>
 
             <li>
-                <a href="#">Contact Us</a>
+                <a href="{% url 'contact-page %'}">Contact us</a>
             </li>
 
             {% if user.is_authenticated %}
@@ -27,7 +27,7 @@
                 </li>
             {% else %}
                 <li>
-                    <a href="{% url 'signup-page' %}">SignUp</a>
+                    <a href="{% url 'signup-page' %}">Signup</a>
                 </li>
 
                 <li>
@@ -37,10 +37,21 @@
         </ul>
     </div>
 
-    <div class="navbar--search">
-        <form method="GET" id="search-jobs-form">
-            <input type="text" placeholder="search...." class="form-control form-control-md" id="query-jobs" />
-        </form>
-    </div>
- 
+    
+
+    <form action="" method="get">
+        <div class="form-inline search-container">
+            <button type="button" class="btn my-2 my-sm-0 nav_search-btn" onclick="toggleSearchInput()">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </button>
+            <input type="text" class="search-input" name="q" placeholder="Search...">
+            <button type="submit" class="btn btn-success search-submit-btn">Search</button>
+        </div>
+    </form>
+    
+    <script>
+        function toggleSearchInput() {
+            document.querySelector('.search-container').classList.toggle('active');
+        }
+    </script>
 </nav>

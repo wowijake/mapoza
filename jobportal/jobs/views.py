@@ -37,6 +37,10 @@ def about_page(request):
     context = { 'title': 'About Us' }
     return render(request, 'jobs/about.html', context)
 
+def contact_page(request):
+    context = {'title': 'Contact Us'}
+    return render(request, 'jobs/contact.html', context)
+
 
 def signup_page(request):
     ##form = UserCreationForm()
@@ -76,3 +80,18 @@ def login_page(request):
 def logout_page(request):
     logout(request)
     return redirect('login-page')
+
+#def search(request):
+    #query = request.GET.get('q')
+   # if query:
+     #   jobs = Job.objects.filter(
+        #    Q(title__itcontains=query)   |
+          #  Q(company_name__itcontains=query) |
+            
+          #  Q(location__itcontains=query)  |
+          #  Q(job_type__itcontains=query)  |
+         #   Q(description__itcontains=query)
+    #    )
+
+  #  else:
+     #   return render(request, 'jobs/jobs.html', {'jobs: jobs'})

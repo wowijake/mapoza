@@ -2,10 +2,11 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-
+<br><br><br>
     <div class="d-flex justify-content-center  items-center mt-4">
         <div class="mt-4">
             <form method="POST" class="bg-white shadow p-4 rounded">
+                <h1>Login to mapoza</h1>
                 {% csrf_token %}
                 {{ form|crispy }}
                 <button type="submit" class="btn w-100 btn-success mt-4">Login</button>

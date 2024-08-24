@@ -1,5 +1,7 @@
-<div class="p-4 rounded">
-    <div class="bg-dark rounded p-4 w-100 h-25 mb-3">
+
+<br><br><br>
+<div class="p-3 rounded">
+    <div class="bg-dark rounded p-5 w-100 h-25 mb-3">
         <h3 class="text-white fw-bold">Welcome Back, <b>{{ user.username }}</b></h3>
         <p class="text-white">Discover new opportunities with Mapoza.</p>
     </div>
@@ -9,10 +11,38 @@
             <small class="text-muted fs-6">Working Schedule</small>
             <div class="mt-1">
                 <form method="GET" id="filter_jobs">
+
                     <input type="radio" name="filter" value="All" id="all" />
-                    All <br />
+                   <label for="all">  All  </label><br/>
                     {% for job_type in job_types %}
                         <input type="radio" name="filter" value="{{ job_type.type_name }}" id="{{ job_type.type_name }}" />
+                        <label for="{{ job_type.type_name }}">{{ job_type.type_name }}</label> <br />
+                        {{ job_type.type_name }}
+                        <br/>
+                    {% endfor %}
+            </form>
+            </div>
+        </div>
+    {% else %}
+        <small class="text-danger fw-bolder">No jobs found!</small>
+    {% endif %}
+</div>
+
+<br><br>
+<div class="p-4 rounded">
+    
+    {% if jobs %}
+        <div class="bg-light rounded p-3">
+            <h5 class="text-dark">Filters</h5>
+            <small class="text-muted fs-6">Salary Range</small>
+            <div class="mt-1">
+                <form method="GET" id="filter_jobs">
+
+                    <input type="radio" name="filter" value="All" id="all" />
+                   <label for="all">  All  </label><br/>
+                    {% for job_type in job_types %}
+                        <input type="radio" name="filter" value="{{ job_type.type_name }}" id="{{ job_type.type_name }}" />
+                        <label for="{{ job_type.type_name }}">{{ job_type.type_name }}</label> <br />
                         {{ job_type.type_name }}
                         <br/>
                     {% endfor %}
